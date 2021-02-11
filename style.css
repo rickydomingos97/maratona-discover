@@ -3,10 +3,10 @@
     --dark-blue: #363f5f;
     --dark-blue-soft: #969cb3;
     --background: #f0f2f5;
-    --header:#45188d;
+    --header:#69757c; 
     --header-original:#2d4a22;
     --white: #fff;
-    --total: #019915;
+    --total: #25f559;
     --total-original: #49aa26;
     --income: #12a454;
     --expense: #e92929;;
@@ -24,6 +24,19 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* sr-only para leitores de tela, acessibilidade */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin-top: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 .container {
     width: min(90vw, 800px);
     margin: auto;
@@ -39,7 +52,7 @@ h2 {
 
 /* HEADER ========================= */
 header {
-    background: var(--header);
+    background: var(--header-original);
     padding: 2rem 0 10rem;
     text-align: center;
 }
@@ -73,6 +86,10 @@ header {
 .card h3 {
     font-weight: normal;
     font-size: 1rem;
+
+    display: flex; /* mantem os elementos em block um ao lado do outro*/
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card p {

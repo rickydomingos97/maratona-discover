@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Ricardo Domingos">
+    <meta name="description" content="Dev Finances Maratona Discover">
+    <meta name="robots" content="index, follow, nofollow, no index">
+
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -14,32 +19,40 @@
 
 <body>
     <header id="logo">
-        <h1>dev.finance$</h1>
+        <img src="assets/logo.svg" alt="Logo dev finance">
     </header>
     <main class="container">
-
         <section id="balance">
-            <h2>Balanco</h2>
+            <h2 class="sr-only">Balanco</h2> <!-- ScreenReader-Only -->
 
             <div class="card">
-                <h3>Entradas</h3>
+                <h3>
+                    <span>Entradas</span>  <!-- Keep elements in line--> 
+                    <img src="assets/income.svg" alt="Imagem de entradas">
+                </h3>
                 <p>R$ 5.000,00</p>
             </div>
 
             <div class="card">
-                <h3>Saidas</h3>
+                <h3>
+                    <span>Saidas</span>
+                    <img src="assets/expense.svg" alt="Imagem de saidas">
+                </h3>
                 <p>R$ 2.000,00</p>
             </div>
 
             <div class="card total">
-                <h3>Total</h3>
+                <h3>
+                    <span>Total</span>
+                    <img src="assets/total.svg" alt="Imagem de total">
+                </h3>
                 <p>R$ 3.000,00</p>
             </div>
 
         </section>
 
         <section id="transaction">
-            <h2>Transacoes</h2>
+            <h2 class="sr-only">Transacoes</h2> <!-- ScreenReader-Only -->
 
             <table id="data-table">
                 <thead>
