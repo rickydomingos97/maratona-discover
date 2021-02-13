@@ -1,2 +1,2 @@
 # maratona-discover
-Deploy: https://devfinancesricky.netlify.app/
+Deploy: https://maratona-discover-one.vercel.app/
