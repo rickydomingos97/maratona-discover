@@ -6,7 +6,7 @@
     --header:#69757c; 
     --header-original:#2d4a22;
     --white: #fff;
-    --total: #25f559;
+    --total: #0e9630;
     --total-original: #49aa26;
     --income: #12a454;
     --expense: #e92929;;
@@ -19,12 +19,17 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 93.75%; /* equivale a 15px, a fonte padrao seria 16px */
+    /* (100 * 15) / 16*/
+}
+
 body {
     background: var(--background);
     font-family: 'Poppins', sans-serif;
 }
 
-/* sr-only para leitores de tela, acessibilidade */
+/* SCREENR READERS ONLY =========================== */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -48,6 +53,28 @@ h2 {
     margin-bottom: 0.8rem;
     color: var(--dark-blue);
     font-weight: normal;
+}
+
+/* LINKS & BUTTONS ========================= */
+a {
+    color: #49aa26;
+    text-decoration: none; 
+}
+
+a:hover {
+    color: #3dd705;
+
+}
+
+/* DISPLAY BLOCK PEGA TODA A WIDTH DA PAGINA */
+/* DISPLAY INLINE PEGA SOMENTE A LARGURA DO ELEMENTO*/
+/* INLINE-BLOCK TEM AS DUAS PROPRIEDADES, BLOCK E INLINE*/
+
+
+.button.new {
+    display: inline-block; /*PARA APLICAR O MARGIN-BOTTOM*/
+    margin-bottom: .8rem; /* SOMENTE APLICA NO DISPLAY: BLOCK*/
+
 }
 
 /* HEADER ========================= */
@@ -87,9 +114,9 @@ header {
     font-weight: normal;
     font-size: 1rem;
 
-    display: flex; /* mantem os elementos em block um ao lado do outro*/
-    align-items: center;
-    justify-content: space-between;
+    display: flex; /* mantem os elementos em block um ao lado do outro fora do padrao INLINE */
+    align-items: center; /* nalinhados no eixo  x ( horizontal )*/
+    justify-content: space-between; /* espaco entre os itens */
 }
 
 .card p {
@@ -110,9 +137,15 @@ header {
     color: var(--dark-blue-soft);
 }
 
+/* ==== PSEUDO CLASS =====*/
 table thead tr:first-child,
 table tbody tr:first-child  {
     border-radius: .25rem 0 0 .25rem;
+}
+/* ==== PSEUDO CLASS =====*/
+table thead tr:last-child,
+table tbody tr:last-child  {
+    border-radius: 0 .25rem .25rem 0;
 }
 
 table th {
@@ -150,4 +183,13 @@ footer {
     padding: 4rem 0 2rem;
     color : var(--dark-blue);
     opacity: .6;
+}
+
+/* ==== RESPONSIVE === */
+/* ==== at rules === */
+@media (min-width: 800px ) {
+    html {
+        font-size: 87.5; /* (100 * 15) / 16 = 14px */
+    }
+    
 }
