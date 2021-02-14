@@ -142,8 +142,7 @@ header {
 
 /* CARDS ========================= */
 .card {
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(2rem);
+    background: var(--white);
     
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
