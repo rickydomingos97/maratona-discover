@@ -2,6 +2,7 @@
 :root {
     --dark-blue: #363f5f;
     --dark-blue-soft: #969cb3;
+    --light-green: #3dd705;
     --background: #f0f2f5;
     --header:#69757c; 
     --header-original:#2d4a22;
@@ -9,7 +10,7 @@
     --total: #0e9630;
     --total-original: #49aa26;
     --income: #12a454;
-    --expense: #e92929;;
+    --red: #e92929;
 
 }
 
@@ -62,8 +63,28 @@ a {
 }
 
 a:hover {
-    color: #3dd705;
+    color: var(--light-green);
 
+}
+
+button {
+    width: 100%;
+    height: 50px;
+
+    border: none;
+
+    color: white;
+    background: var(--total-original);;
+
+    padding: 0;
+
+    border-radius: .25rem;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--light-green);;
 }
 
 /* DISPLAY BLOCK PEGA TODA A WIDTH DA PAGINA */
@@ -74,7 +95,24 @@ a:hover {
 .button.new {
     display: inline-block; /*PARA APLICAR O MARGIN-BOTTOM*/
     margin-bottom: .8rem; /* SOMENTE APLICA NO DISPLAY: BLOCK*/
+}
 
+.button.cancel {
+    color: var(--red);
+    border: 2px var(--red) solid;
+    border-radius: .25rem;
+
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: .6;
+}
+
+.button.cancel:hover{
+    opacity: 1;
 }
 
 /* HEADER ========================= */
@@ -131,6 +169,12 @@ header {
     color: var(--white);
 }
 /* TABLE ========================= */
+#transaction {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
 #data-table{
     width: 100%;
     border-spacing: 0 0.5rem;
@@ -175,8 +219,85 @@ td.income {
 }
 
 td.expense {
-    color: var(--expense)
+    color: var(--red)
 }
+
+/* MODAL ========================= */
+/* modal-overlay camada escura de background do modal */
+.modal-overlay{
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, .7);
+
+    position: fixed; /* para fixar o modal na tela */
+    top: 0; /* para jogar o modal do bottom para o topo */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+/* ESCONDENDO O MODAL DA PAGINA ATE O JS USAR A CLASSE active [ARA TRAZER ELE DE VOLTA */
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 999;
+}
+
+/* VAI SER ATIVADO QUANDO O BOTAO DO MODAL FOR ATIVADO PELO JS*/
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: #f0f2f5;
+    padding: 2.4rem;
+
+    position: relative;
+    z-index: 1;
+
+}
+
+/* FORM ========================= */
+#form {
+    max-width: 500px;
+
+}
+
+#form h2 {
+    margin-top: 0;
+}
+
+input {
+    border: none;
+    border-radius: .2rem;
+
+    padding: 0.8rem;
+    width: 100%; /* PARA OCUPAR TODO O ESPACO DO PAI DELE */
+}
+
+.input-group {
+    margin-top: 0.8rem;
+    
+}
+
+.input-group small {
+    opacity: 0.4;
+}
+
+.input-group.actions {
+    display: flex;/* para destravar as opcoes de alinhamento */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* PARA DEFINIR O TAMANHO DOS BOTOES DO MODAL DE FORMA HARMONIOSA */
+.input-group.actions .button,
+.input-group.actions button {
+    width: 48%;
+}
+
+
 /* FOOTER ========================= */
 footer {
     text-align: center;
@@ -191,5 +312,16 @@ footer {
     html {
         font-size: 87.5; /* (100 * 15) / 16 = 14px */
     }
-    
+/*GRID PODE SER USADO EM VARIAS POSICOES*/
+    #balance {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+        /* 
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem; */
+
+
+    }
 }
