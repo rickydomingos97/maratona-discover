@@ -3,7 +3,7 @@
     --dark-blue: #363f5f;
     --dark-blue-soft: #969cb3;
     --light-green: #3dd705;
-    --background: #f0f2f5;
+    --background: #ebeef1;
     --header:#69757c; 
     --header-original:#2d4a22;
     --white: #fff;
@@ -11,6 +11,7 @@
     --total-original: #49aa26;
     --income: #12a454;
     --red: #e92929;
+    --gradiente-background: #ff4e69, #ffcf5f;
 
 }
 
@@ -27,6 +28,7 @@ html {
 
 body {
     background: var(--background);
+
     font-family: 'Poppins', sans-serif;
 }
 
@@ -117,7 +119,7 @@ button:hover {
 
 /* HEADER ========================= */
 header {
-    background: var(--header-original);
+    background: rgb(106, 187, 106);
     padding: 2rem 0 10rem;
     text-align: center;
 }
@@ -140,12 +142,15 @@ header {
 
 /* CARDS ========================= */
 .card {
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2rem);
+    
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
     margin-bottom: 2rem;
 
-    color:var(--)
+    
+
 }
 
 .card h3 {
@@ -173,6 +178,8 @@ header {
     display: block;
     width: 100%;
     overflow-x: auto;
+
+    
 }
 
 #data-table{
