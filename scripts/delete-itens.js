@@ -1,5 +1,10 @@
-const deleted = document.querySelectorAll("#btn-delete");
+const Delete = {
+    open() {
+        document.querySelector('.modal-delete').classList.add('active')
+    },
 
-deleted.addEventListener("click", function() {
-    alert("clicou");
-})
+    close() {
+        document.querySelector('.modal-delete').classList.remove('acitive')
+    }
+}
+

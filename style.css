@@ -119,7 +119,7 @@ button:hover {
 
 /* HEADER ========================= */
 header {
-    background: rgb(106, 187, 106);
+    background: var(--header-original);
     padding: 2rem 0 10rem;
     text-align: center;
 }
@@ -251,6 +251,43 @@ td.expense {
 
 /* VAI SER ATIVADO QUANDO O BOTAO DO MODAL FOR ATIVADO PELO JS*/
 .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: #f0f2f5;
+    padding: 2.4rem;
+
+    position: relative;
+    z-index: 1;
+
+}
+
+/* MODAL DELETE ========================= */
+
+/* modal-overlay camada escura de background do modal */
+.modal-delete {
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, .7);
+
+    position: fixed; /* para fixar o modal na tela */
+    top: 0; /* para jogar o modal do bottom para o topo */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+/* ESCONDENDO O MODAL DA PAGINA ATE O JS USAR A CLASSE active [ARA TRAZER ELE DE VOLTA */
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 999;
+}
+
+/* VAI SER ATIVADO QUANDO O BOTAO DO MODAL FOR ATIVADO PELO JS*/
+.modal-delete.active {
     opacity: 1;
     visibility: visible;
 }
