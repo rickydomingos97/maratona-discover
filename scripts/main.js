@@ -30,6 +30,12 @@ const Transaction = {
     // AGRUPANDO O transactions pra dentro do Transactions //
     // Eh um atalho para todas as transacoes //
     all: transactions,
+    // VAMOS ADICIONAR AS TRANSACOES PELO MENU //
+    add(transaction){
+        // push usado para arrays //
+        Transaction.all.push()
+    },
+
     incomes() {
         let income = 0
         // pegar todas as transacoes
@@ -45,6 +51,7 @@ const Transaction = {
 
         return income
     },
+
     expenses() {
         let expense = 0
         // pegar todas as transacoes
@@ -60,6 +67,7 @@ const Transaction = {
 
         return expense
     },
+
     total() {
         // SOMAMOS POR QUE AS SAIDAS JA ESTAO NEGATIVAS COM O SINAL DE - //
         // 20 + (-10) = 10
