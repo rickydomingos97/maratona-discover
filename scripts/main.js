@@ -1,3 +1,4 @@
+// Isso vai ser guardado no LOCAL STORE //
 const transactions = [{
         id: 1,
         description: 'Luz',
@@ -26,11 +27,14 @@ const transactions = [{
 
 // RESPONSAVEL PELO CALCULO MATEMATICO //
 const Transaction = {
+    // AGRUPANDO O transactions pra dentro do Transactions //
+    // Eh um atalho para todas as transacoes //
+    all: transactions,
     incomes() {
         let income = 0
         // pegar todas as transacoes
         // para cada transacao
-        transactions.forEach(transaction => {
+        Transaction.all.forEach(transaction => {
             // se ela for maior que zero
             if( transaction.amount > 0) {
               // se for somar a uma variavel e retornar a variavel
@@ -45,7 +49,7 @@ const Transaction = {
         let expense = 0
         // pegar todas as transacoes
         // para cada transacao
-        transactions.forEach(transaction => {
+        Transaction.all.forEach(transaction => {
             // se ela for maior que zero
             if( transaction.amount < 0) {
               // se for somar a uma variavel e retornar a variavel
