@@ -4,6 +4,6 @@ const Modal = {
     },
 
     close(){
-        document.querySelector('.modal-overlay').classList.remove('acitive')
+        document.querySelector('.modal-overlay').classList.remove('active')
     }
 }
