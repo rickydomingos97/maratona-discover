@@ -202,9 +202,9 @@ const Form = {
         }
     },
 
-    saveTransaction() {
+/*     saveTransaction() {
         Transaction.add(transaction)
-    },
+    }, */
 
     submit(event) {
         event.preventDefault()
@@ -215,7 +215,8 @@ const Form = {
             // formatar os dados para salvar
             const transaction = Form.formatValues()
             // salvar
-            Form.saveTransaction(transaction)
+            /* Form.saveTransaction(transaction) */
+            Transaction.add(transaction)
             // apagar os dados do formulario
             // fechar o modal
             // update the App
