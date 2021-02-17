@@ -1,3 +1,4 @@
+// Esse transactions vai ser add no Transactions //
 const transactions = [{
         
         description: 'Luz',
@@ -143,6 +144,53 @@ const Utils = {
 
     }
 }
+// SUBMIT VEIO DO FORM NO HTML //
+const Form = {
+    description: document.querySelector('input#description'),
+    amount: document.querySelector('input#amount'),
+    date: document.querySelector('input#date'),
+
+    getValues() {
+        return {
+            description: Form.description.value,
+            amount: Form.amount.value,
+            date: Form.date.value,
+        }
+    },
+
+    formatData() {
+        console.log("Formatar os dados");
+    },
+    validateFields() {
+        /*  const description = Form.getValues().description
+            const amount = Form.getValues().amount
+            const date = From.getValues().date
+        */
+        const { description, amount, date} = Form.getValues(); // Desestruturacao dos dados //
+
+        if ( description.trim() === "" || amount.trim() === "" || date.trim() === "" ) {
+            throw new Error(" Por favor preencha todos os campos")
+        }
+    },
+    submit(event) {
+        event.preventDefault()
+
+        try {
+            // verificar se todas as informacoes foram preenchidas
+            Form.validateFields()
+            // formatar os dados para salvar
+            // Form.formatData()
+            // salvar
+            // apagar os dados do formulario
+            // fechar o modal
+            // update the App
+        } catch (error) {
+            alert(error.message)
+        }
+
+    
+    }
+}
 
 const App = {
     init() {
@@ -161,5 +209,3 @@ const App = {
 }
 
 App.init()
-
-Transaction.remove(1)
