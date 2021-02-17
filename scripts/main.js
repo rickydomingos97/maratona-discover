@@ -153,7 +153,7 @@ const Utils = {
         value = Number(value) * 100
         console.log(value);
 
-        return value
+        return Math.round(value)
     },
     // formatando a data que veio original como 2021-01-16 para 16/01/2021 //
     formatDate(date) {
