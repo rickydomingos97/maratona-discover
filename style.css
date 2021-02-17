@@ -414,7 +414,6 @@ label {
     border-radius: 100px;
     position: relative;
     /* margin-right: 8px; */
-    margin: 8px;
 }
 
 label::after{
