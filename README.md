@@ -50,3 +50,5 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 ---
 
 Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discordapp.com/invite/gCRAFhc) 
+<br/><br/>
+<img src="https://www.alura.com.br/assets/api/cursos/java-introducao-orientacao-objetos.svg" width="100px"/>
