@@ -125,6 +125,17 @@ const DOM = {
 }
 
 const Utils = {
+    formatAmount(value) {
+        value = Number(value) * 100
+
+        return value
+    },
+    // formatando a data que veio original como 2021-01-16 para 16/01/2021 //
+    formatDate(date) {
+        const splittedDate = date.split("-")
+        return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
+    },
+
     formatCurrency(value) {
 
         // INCLUE O SINAL DE - NOS NUMEROS DAS DESPESAS //
@@ -144,6 +155,7 @@ const Utils = {
 
     }
 }
+
 // SUBMIT VEIO DO FORM NO HTML //
 const Form = {
     description: document.querySelector('input#description'),
@@ -158,9 +170,10 @@ const Form = {
         }
     },
 
-    formatData() {
+/*     formatData() {
         console.log("Formatar os dados");
-    },
+    }, */
+
     validateFields() {
         /*  const description = Form.getValues().description
             const amount = Form.getValues().amount
@@ -172,14 +185,24 @@ const Form = {
             throw new Error(" Por favor preencha todos os campos")
         }
     },
+
+    formatValues() {
+        let { description, amount, date } = Form.getValues()
+
+        amount = Utils.formatAmount(amount)
+
+        date = Utils.formatDate(date)
+        console.log(date)
+    },
+
     submit(event) {
         event.preventDefault()
 
         try {
             // verificar se todas as informacoes foram preenchidas
-            Form.validateFields()
+            ////// Form.validateFields()
             // formatar os dados para salvar
-            // Form.formatData()
+            Form.formatValues()
             // salvar
             // apagar os dados do formulario
             // fechar o modal
