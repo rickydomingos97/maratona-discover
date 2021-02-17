@@ -41,7 +41,7 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 
 ## :computer: Deploy
 
-Você pode visualizar o layout do projeto através [desse link](https://maratona-discover-one.vercel.app/ )
+Você pode visualizar o projeto rodando através [desse link](https://maratona-discover-one.vercel.app/ )
 
 ## :memo: Licença
 
