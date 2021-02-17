@@ -202,6 +202,12 @@ const Form = {
         }
     },
 
+    clearFields() {
+        Form.description.value = ""
+        Form.amount.value = ""
+        Form.date.value = ""
+    }
+
 /*     saveTransaction() {
         Transaction.add(transaction)
     }, */
@@ -218,6 +224,7 @@ const Form = {
             /* Form.saveTransaction(transaction) */
             Transaction.add(transaction)
             // apagar os dados do formulario
+            Form.clearFields()
             // fechar o modal
             // update the App
         } catch (error) {
