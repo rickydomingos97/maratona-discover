@@ -226,7 +226,10 @@ const Form = {
             // apagar os dados do formulario
             Form.clearFields()
             // fechar o modal
+            Modal.close()
             // update the App
+            /* App.reload() */
+            // JA TEMOS UM APP RELOAD NO ADD TRANSACTIONS //
         } catch (error) {
             alert(error.message)
         }
