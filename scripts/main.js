@@ -8,9 +8,18 @@ const Modal = {
     }
 }
 
+const Storage = {
+    get() {
+        return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []
+    },
+
+    set(transaction) {
+        localStorage.setItem("dev.finances:transactions", JSON.stringify(transactions))
+    }
+}
 
 // Esse transactions vai ser add no Transactions //
-const transactions = [{
+/* const transactions = [{
         
         description: 'Luz',
         amount: -50000,
@@ -35,12 +44,14 @@ const transactions = [{
         date: '23/01/2021',
     }
 ]
-
+ */
 const Transaction = {
-    all: transactions,
+    /* all: transactions, */
+    all: Storage.get(),
+    
     add(transaction) {
         Transaction.all.push(transaction)
-        console.log(Transaction.all);
+
         App.reload()
     },
 
@@ -86,18 +97,17 @@ const DOM = {
     transactionsContainer: document.querySelector('#data-table tbody'),
 
     addTransaction(transaction, index) {
-        console.log(transaction);
+        /* console.log(transaction); */
 
         const tr = document.createElement('tr');
-        tr.innerHTML = DOM.innerHTMLTransaction(transaction);
+        tr.innerHTML = DOM.innerHTMLTransaction(transaction, index);
         // pegamos o container e adicionamos na var DOM para inserir no tr como filho // 
+        tr.dataset.index = index
+
         DOM.transactionsContainer.appendChild(tr)
-
-
-
     },
    
-    innerHTMLTransaction(transaction) {
+    innerHTMLTransaction(transaction, index) {
 
         // o CSSclass vai verificar usando um ternario
         // e vai adicionar o item como entrada ou saida conforme a logica apresentada
@@ -110,7 +120,7 @@ const DOM = {
         <td class=${CSSclass}>${amount}</td>
             <td class="date">${transaction.date}</td>
         <td>
-            <img src="assets/minus.svg" alt="deletar" id="btn-delete" class="botao-deletar">
+            <img onclick="Transaction.remove(${index})" src="assets/minus.svg" alt="deletar" id="btn-delete" class="botao-deletar">
         </td>
     `
         return html;
@@ -141,6 +151,7 @@ const Utils = {
         /* value = Number(value.replace(/\,\/g, "")) * 100  */
 
         value = Number(value) * 100
+        console.log(value);
 
         return value
     },
@@ -242,8 +253,8 @@ const Form = {
             // fechar o modal
             Modal.close()
             // update the App
-            /* App.reload() */
-            // JA TEMOS UM APP RELOAD NO ADD TRANSACTIONS //
+                /* App.reload() */
+                // JA TEMOS UM APP RELOAD NO ADD TRANSACTIONS //
         } catch (error) {
             alert(error.message)
         }
@@ -252,11 +263,17 @@ const Form = {
     }
 }
 
+
+
+/* Storage.get() */
+
 const App = {
     init() {
+        // pode ser usado como atalho para a DOM transaction //
+        // Transaction.all.forEach(DOM.addTransaction) //
        
-        Transaction.all.forEach((transaction) => {
-            DOM.addTransaction(transaction)
+        Transaction.all.forEach((transaction, index) => { // recebendo o index la do add.transaction da DOM //
+            DOM.addTransaction(transaction, index)
         });
         
         DOM.updateBalance();
