@@ -192,7 +192,18 @@ const Form = {
         amount = Utils.formatAmount(amount)
 
         date = Utils.formatDate(date)
-        console.log(date)
+
+        return {
+            /* description: description, // QUANDO O NOME DA CHAVE EH O MESMO NOME DA VARIAVEL NAO PRECISAMOS DEFINIR POR DOIS PONTO, PODEMOS COLOCAR DIRETO SEM ATRIBUIR */
+            // PODEMOS USAR UM SHORT HAND (ATALHO) O MESMO NOME DAS VARIAVEIS //
+            description,
+            amount,
+            date
+        }
+    },
+
+    saveTransaction() {
+        Transaction.add(transaction)
     },
 
     submit(event) {
@@ -200,10 +211,11 @@ const Form = {
 
         try {
             // verificar se todas as informacoes foram preenchidas
-            ////// Form.validateFields()
+            Form.validateFields()
             // formatar os dados para salvar
-            Form.formatValues()
+            const transaction = Form.formatValues()
             // salvar
+            Form.saveTransaction(transaction)
             // apagar os dados do formulario
             // fechar o modal
             // update the App
