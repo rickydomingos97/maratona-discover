@@ -1,3 +1,14 @@
+const Modal = {
+    open(){
+        document.querySelector('.modal-overlay').classList.add('active')
+    },
+
+    close(){
+        document.querySelector('.modal-overlay').classList.remove('active')
+    }
+}
+
+
 // Esse transactions vai ser add no Transactions //
 const transactions = [{
         
@@ -128,7 +139,7 @@ const Utils = {
     formatAmount(value) {
         // OUTRA MANEIRA DE FAZER A FORMATACAO DA DATA // === EXPRESSAO REGULAR === //
         /* value = Number(value.replace(/\,\/g, "")) * 100  */
-        
+
         value = Number(value) * 100
 
         return value
@@ -209,7 +220,7 @@ const Form = {
         Form.description.value = ""
         Form.amount.value = ""
         Form.date.value = ""
-    }
+    },
 
 /*     saveTransaction() {
         Transaction.add(transaction)
