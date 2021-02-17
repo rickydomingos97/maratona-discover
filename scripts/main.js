@@ -126,6 +126,9 @@ const DOM = {
 
 const Utils = {
     formatAmount(value) {
+        // OUTRA MANEIRA DE FAZER A FORMATACAO DA DATA // === EXPRESSAO REGULAR === //
+        /* value = Number(value.replace(/\,\/g, "")) * 100  */
+        
         value = Number(value) * 100
 
         return value
